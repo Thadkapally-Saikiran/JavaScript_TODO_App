@@ -1,0 +1,89 @@
+/* 
+   This CSS file styles our to-do list app.
+   It sets a background image for the page, styles the task list, and makes the layout responsive.
+*/
+
+/* Apply a background image to the whole page */
+body {
+    /* Replace './assets/image.png' with your desired image file path or URL */
+    background: url('./assets/image.png') no-repeat center center fixed;
+    background-size: cover;  /* Make sure the image covers the entire background */
+    margin: 0;               /* Remove default margin */
+    padding: 0;              /* Remove default padding */
+}
+
+/* Style for the ordered list that contains our tasks */
+#todosEle ol {
+    padding: 0;                /* No extra padding */
+    display: flex;             /* Use flex layout */
+    flex-direction: column;    /* Stack tasks vertically */
+    gap: 5px;                  /* Small gap between tasks */
+}
+
+/* General style for each task item */
+.task-item {
+    /* The background color here will be set by the specific priority class */
+    color: white;              /* White text for readability */
+    padding: 10px;             /* Some space inside each task */
+    border-radius: 5px;        /* Rounded corners */
+    list-style-type: none;     /* Remove default bullet points */
+    display: flex;             /* Use flexbox to arrange content */
+    align-items: center;       /* Center content vertically */
+    justify-content: space-between; /* Space between task details and buttons */
+}
+
+/* Style for high priority tasks (red background) */
+.priority-high {
+    background-color: #ff4d4d !important;
+}
+
+/* Style for medium priority tasks (yellow background) */
+.priority-medium {
+    background-color: #ffcc00 !important;
+}
+
+/* Style for low priority tasks (green background) */
+.priority-low {
+    background-color: #66ff66 !important;
+}
+
+/* Style for the task text (description and time) */
+.task-text {
+    cursor: pointer;  /* Change the mouse cursor to a pointer when hovering */
+    flex-grow: 1;     /* Let this text take up available space */
+}
+
+/* If a task is marked as completed, style it with a green background and strike-through text */
+.task-item.completed {
+    background-color: green;
+    text-decoration: line-through;
+}
+
+/* Style for the priority badge that shows the task's priority */
+.priority-badge {
+    font-weight: bold;       /* Make the badge text bold */
+    padding: 2px 6px;        /* Add some padding inside the badge */
+    border-radius: 3px;      /* Rounded corners for the badge */
+    margin-left: 10px;       /* Space between the task text and the badge */
+    color: #fff;             /* White text for the badge */
+}
+
+/* Responsive design: These styles apply when the screen is 768px wide or smaller */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;  /* Add padding around the container for small screens */
+    }
+    .d-flex {
+        flex-direction: column; /* Stack input fields and buttons vertically */
+    }
+    .task-item {
+        flex-direction: column; /* Stack the content of each task vertically */
+        align-items: flex-start; /* Align items to the left */
+    }
+    .task-item > div {
+        margin-top: 10px;         /* Add space above the buttons */
+        width: 100%;              /* Make the buttons container full width */
+        display: flex;            /* Use flexbox for the buttons container */
+        justify-content: space-between; /* Spread the buttons evenly */
+    }
+}
