@@ -1,5 +1,7 @@
 # To-Do List Application 📝
 
+![](todo.png)
+
 A simple and responsive To-Do List web application that allows users to manage their daily tasks efficiently. Built with HTML, CSS, JavaScript, and Bootstrap, it demonstrates clean design and modular coding practices.
 
 ---
